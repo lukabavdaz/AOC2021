@@ -14,7 +14,7 @@ fn get_input() -> Vec<(i32, i32, i32, i32)> {
 }
 
 fn overlaps<'a>(input: impl Iterator<Item = &'a (i32, i32, i32, i32)>) -> usize {
-    let mut field = HashMap::new();
+    let mut field = std::collections::HashMap::new();
     for &(x1, y1, x2, y2) in input {
         let (dx, dy) = (x2 - x1, y2 - y1);
         let (dx_s, dy_s) = (dx.signum(), dy.signum());
